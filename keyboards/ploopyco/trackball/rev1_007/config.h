@@ -30,3 +30,8 @@
 
 #define ENCODER_A_PINS { GP26 }
 #define ENCODER_B_PINS { GP28 }
+
+/* Custom sensitivity */
+#define PLOOPY_DPI_OPTIONS \
+    { 1000, 1900, 2800 }
+#define PLOOPY_DPI_DEFAULT 1
