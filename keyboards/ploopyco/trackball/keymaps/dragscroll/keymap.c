@@ -15,25 +15,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include QMK_KEYBOARD_H
 
-#pragma once
-
-/* disable action features */
-//#define NO_ACTION_LAYER
-//#define NO_ACTION_TAPPING
-//#define NO_ACTION_ONESHOT
-
-/* PMW3360 settings */
-#define ROTATIONAL_TRANSFORM_ANGLE 20
-#define POINTING_DEVICE_INVERT_Y
-
-#define ENCODER_BUTTON_COL 1
-#define ENCODER_BUTTON_ROW 0
-/* Custom encoder needs to specify just how many encoders we have */
-#define NUM_ENCODERS 1
-
-/* Custom drag scroll settings */
-#define PLOOPY_DRAGSCROLL_MOMENTARY 1
-#define PLOOPY_DRAGSCROLL_INVERT 1
-#define PLOOPY_DRAGSCROLL_DIVISOR_H 16.0
-#define PLOOPY_DRAGSCROLL_DIVISOR_V 16.0
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [0] = LAYOUT( /* Base */
+        KC_BTN1, KC_BTN3, KC_BTN2,
+          LT(1, KC_BTN4), KC_BTN5
+    ),
+    [1] = LAYOUT(
+        DRAG_SCROLL, _______, DPI_CONFIG,
+          _______, _______
+    )
+};
